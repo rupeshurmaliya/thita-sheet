@@ -1,4 +1,4 @@
-package twoPointers;
+package twoPointers.sortedArraysTargetSum;
 
 /**
  * Created by Rupesh Urmaliya on 09/11/25

@@ -1,4 +1,4 @@
-package twoPointers;
+package twoPointers.sortedArraysTargetSum;
 
 import java.util.ArrayList;
 import java.util.Arrays;
