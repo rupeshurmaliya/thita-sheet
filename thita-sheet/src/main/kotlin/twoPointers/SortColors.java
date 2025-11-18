@@ -29,7 +29,6 @@ public class SortColors {
                 middle++;
             }
         }
-        System.out.println(Arrays.toString(nums));
     }
 
     private void swap(int[] nums, int first, int second) {
@@ -42,5 +41,6 @@ public class SortColors {
         int[] nums = {2, 0, 2, 1, 1, 0};
         SortColors sortColors = new SortColors();
         sortColors.sortColors(nums);
+        System.out.println(Arrays.toString(nums));
     }
 }
