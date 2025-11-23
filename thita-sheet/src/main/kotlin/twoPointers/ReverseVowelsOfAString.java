@@ -1,4 +1,4 @@
-package slidingWindow;
+package twoPointers;
 
 /**
  * Created by Rupesh Urmaliya on 23/11/25
