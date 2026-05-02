@@ -40,7 +40,7 @@ public class LongestPalindromicSubstring {
 
     public static void main(String[] args) {
         LongestPalindromicSubstring longestPalindromicSubstring = new LongestPalindromicSubstring();
-        String palindromeString = longestPalindromicSubstring.longestPalindrome("babad");
+        String palindromeString = longestPalindromicSubstring.longestPalindrome("bacde");
         System.out.println(palindromeString);
     }
 
