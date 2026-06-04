@@ -1,8 +1,14 @@
 package com.thitasheet.twoPointers
 
 /**
+ *   • Time Complexity:  O(N)
+ *   We perform a single pass over the  logs  array containing  N  elements. Within the loop, checking string conditions is an  O(1)  average-case operation.
  *
- * [](https://leetcode.com/problems/crawler-log-folder/)
+ *
+ *   • Space Complexity:  O(1)
+ *   We only maintain a single integer variable  depth  to track folder levels. No auxiliary collections are used.
+ *
+ * [1598. Crawler Log Folder](https://leetcode.com/problems/crawler-log-folder/)
  */
 
 class CrawlerLogFolder {
@@ -29,11 +35,9 @@ class CrawlerLogFolder {
                         depth--
                     }
                 }
-
                 "./" -> {
                     // Remain in the current directory, do nothing
                 }
-
                 else -> {
                     // Move down into a child directory
                     depth++
