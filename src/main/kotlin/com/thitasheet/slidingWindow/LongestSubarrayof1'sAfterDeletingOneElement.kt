@@ -7,7 +7,7 @@ package com.thitasheet.slidingWindow
  *
  * Space complexity:  O(1)  since we only store three simple integer counters.
  *
- * [1493. Longest Subarray of 1's After Deleting One Element](https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/?envType=problem-list-v2&envId=dogesdee)
+ * [1493. Longest Subarray of 1's After Deleting One Element](https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/)
  *
  * [YouTube solution](https://www.youtube.com/watch?v=RCTP3DIfSSg)
  */
