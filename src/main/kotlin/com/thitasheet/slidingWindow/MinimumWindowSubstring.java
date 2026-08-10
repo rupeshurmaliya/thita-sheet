@@ -4,12 +4,12 @@ package com.thitasheet.slidingWindow;
  * Created by Rupesh Urmaliya on 23/11/25
  * <p>
  * Que: <a href="https://leetcode.com/problems/minimum-window-substring/description/">76. Minimum Window Substring</a>
+ * <p>
+ * Link: <a href="https://www.youtube.com/watch?v=jSto0O4AJbM&t=1s">YouTube Solution</a>
  */
 
 
 public class MinimumWindowSubstring {
-
-    //https://www.youtube.com/watch?v=jSto0O4AJbM&t=1s
 
     private String minWindow(String s, String t) {
         if (t.length() == 0 || s.length() == 0 || t.length() > s.length()) {
