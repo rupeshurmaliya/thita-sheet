@@ -24,7 +24,7 @@ package com.thitasheet.tree
 class BinaryTreeLevelOrderTraversal {
 
     fun levelOrder(root: TreeNode?): List<List<Int>> {
-        val result = mutableListOf<MutableList<Int>>()
+        val result = mutableListOf<List<Int>>()
         if (root == null) return result
 
         // ArrayDeque is generally more efficient than LinkedList
