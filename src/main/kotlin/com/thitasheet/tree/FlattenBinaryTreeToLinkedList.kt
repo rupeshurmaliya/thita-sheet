@@ -144,14 +144,26 @@ class FlattenBinaryTreeToLinkedList {
      */
 
     fun flattenIterative(root: TreeNode?): Unit {
+        var current = root
+        while (current != null) {
+            // If current node has a left subtree, it needs to be spliced into the right
+            if (current.left != null) {
+                // Find the rightmost node in the left subtree
+                var rightMost = current.left!!
+                while (rightMost.right != null) {
+                    rightMost = rightMost.right!!
+                }
 
+                // Connect the rightmost node of left subtree to current's right child
+                rightMost.right = current.right
 
-        var node = root
-        while (node != null) {
-            var rightMost = node.left
-            while (rightMost.right != null) {
-
+                // Move the left subtree to current's right child
+                current.right = current.left
+                current.left = null
             }
+
+            // Move to the next node on the right spine
+            current = current.right
         }
     }
 }
