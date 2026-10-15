@@ -59,7 +59,7 @@ class BinaryTreePaths {
         nodeQueue.addLast(root)
         pathQueue.addLast("${root.`val`}")
 
-        while (nodeQueue.isNotEmpty()) {
+        while (!nodeQueue.isEmpty()) {
             val currentNode = nodeQueue.removeFirst()
             val currentPath = pathQueue.removeFirst()
 
