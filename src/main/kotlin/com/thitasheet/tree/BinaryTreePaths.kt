@@ -48,25 +48,40 @@ class BinaryTreePaths {
         return result
     }
 
-    fun binaryTreePaths(root: TreeNode?): List<String> {
+    fun binaryTreePathsBFS(root: TreeNode?): List<String> {
         val result = mutableListOf<String>()
         if (root == null) return result
 
+        // Queue storing node and its path string up to that node
         val nodeQueue = ArrayDeque<TreeNode>()
         val pathQueue = ArrayDeque<String>()
 
-        while (!nodeQueue.isEmpty()) {
+        nodeQueue.addLast(root)
+        pathQueue.addLast("${root.`val`}")
+
+        while (nodeQueue.isNotEmpty()) {
             val currentNode = nodeQueue.removeFirst()
             val currentPath = pathQueue.removeFirst()
 
+            // If current node is a leaf, add path to result
             if (currentNode.left == null && currentNode.right == null) {
                 result.add(currentPath)
             }
 
+            // Enqueue left child with updated path
             if (currentNode.left != null) {
-
+                nodeQueue.addLast(currentNode.left!!)
+                pathQueue.addLast("$currentPath->${currentNode.left!!.`val`}")
             }
 
+            // Enqueue right child with updated path
+            if (currentNode.right != null) {
+                nodeQueue.addLast(currentNode.right!!)
+                pathQueue.addLast("$currentPath->${currentNode.right!!.`val`}")
+            }
         }
+
+        return result
     }
+}
 }
