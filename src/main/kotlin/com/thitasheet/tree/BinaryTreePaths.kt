@@ -84,4 +84,3 @@ class BinaryTreePaths {
         return result
     }
 }
-}
