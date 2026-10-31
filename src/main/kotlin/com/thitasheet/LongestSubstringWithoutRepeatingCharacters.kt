@@ -20,21 +20,33 @@ class LongestSubstringWithoutRepeatingCharacters {
 
     fun lengthSubstring(s: String): Int {
         var maxLength = 0
-        var left = 0
-        val lastSeenIndex = mutableMapOf<Char, Int>()
+        var windowStart = 0
+        // Maps each character to its most recently seen index
+        val lastSeenIndices = mutableMapOf<Char, Int>()
 
-        for (right in s.indices) {
-            val currentChar = s[right]
-            val previousIndex = lastSeenIndex[currentChar]
-            if (previousIndex != null) {
-                left = maxOf(previousIndex + 1, left)
+        for (windowEnd in s.indices) {
+            val currentChar = s[windowEnd]
+
+            // If currentChar was already seen, move windowStart past its previous occurrence
+            if (lastSeenIndices.containsKey(currentChar)) {
+                val previousIndex = lastSeenIndices[currentChar]!!
+                windowStart = maxOf(windowStart, previousIndex + 1)
             }
-            lastSeenIndex[currentChar] = right
-            maxLength = maxOf(maxLength, right - left + 1)
+
+            // Record or update the most recent index of currentChar
+            lastSeenIndices[currentChar] = windowEnd
+
+            // Calculate the length of the current valid window and update maxLength
+            val currentLength = windowEnd - windowStart + 1
+            maxLength = maxOf(maxLength, currentLength)
         }
+
         return maxLength
     }
 
+    /**
+     *  If the character set consists only of standard ASCII characters (values 0 to 127), an IntArray(128) can replace the hash map for cache locality and higher execution speed.
+     */
     fun lengthOfLongestSubstring(s: String): Int {
         var maxLength = 0
         var left = 0
