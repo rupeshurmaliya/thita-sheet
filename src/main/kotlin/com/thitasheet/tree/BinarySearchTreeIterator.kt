@@ -50,7 +50,7 @@ class BinarySearchTreeIterator(root: TreeNode?) {
 
         // If the processed node has a right child, push its leftmost branch
         if (smallestNode.right != null) {
-            pushAllLeft(smallestNode)
+            pushAllLeft(smallestNode.right)
         }
         return smallestNode.`val`
     }
@@ -64,7 +64,7 @@ class BinarySearchTreeIterator(root: TreeNode?) {
     private fun pushAllLeft(node: TreeNode?) {
         var current = node
         while (current != null) {
-            stack.push(node)
+            stack.push(current)
             current = current.left
         }
     }
