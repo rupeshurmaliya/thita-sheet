@@ -1,5 +1,7 @@
 package com.thitasheet.tree
 
+import java.util.*
+
 
 /**
  * `Time Complexity: O(n)`
@@ -30,6 +32,37 @@ class BinaryTreeInorderTraversal {
         }
 
         inorder(root)
+        return result
+    }
+
+    /**
+     * Performs an iterative in-order traversal of a binary tree.
+     *
+     * Time Complexity: O(n) - visits each node exactly once.
+     *
+     * Space Complexity: O(h) - where h is the height of the tree.
+     */
+    fun inorderTraversalIterative(root: TreeNode?): List<Int> {
+        val result = mutableListOf<Int>()
+        // Use ArrayDeque (Modern, non-synchronized)
+        val stack = ArrayDeque<TreeNode>()
+        var current = root
+
+        // We continue as long as there are nodes to visit or nodes on the stack
+        while (current != null || !stack.isEmpty()) {
+            // 1. Reach the leftmost node of the current subtree
+            while (current != null) {
+                stack.addLast(current)
+                current = current.left
+            }
+            // 2. Current is null at this point, so we pop from stack
+            val node = stack.removeLast()
+            // 3. Visit the node (add to result)
+            result.add(node.`val`)
+            // 4. We have visited the left and the root, now go right
+            current = node.right
+        }
+
         return result
     }
 }
