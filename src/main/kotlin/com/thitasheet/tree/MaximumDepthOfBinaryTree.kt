@@ -49,6 +49,7 @@ package com.thitasheet.tree
  *
  * In this case, the Diameter stayed entirely within the left subtree! It didn't even use the Root (Node 1).
  *
+ * **Hint: Pattern 15: Tree DFS - Recursive Postorder Traversal**
  */
 
 class MaximumDepthOfBinaryTree {

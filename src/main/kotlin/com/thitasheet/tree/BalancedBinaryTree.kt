@@ -19,6 +19,8 @@ import kotlin.math.abs
  * [110. Balanced Binary Tree](https://leetcode.com/problems/balanced-binary-tree/description/?envType=problem-list-v2&envId=wj7n672g)
  *
  * Extension of [MaximumDepthOfBinaryTree]
+ *
+ * **Hint: Pattern 15: Tree DFS - Recursive Postorder Traversal**
  */
 
 class BalancedBinaryTree {
