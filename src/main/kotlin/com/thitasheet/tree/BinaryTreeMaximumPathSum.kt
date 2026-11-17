@@ -26,8 +26,8 @@ class BinaryTreeMaximumPathSum {
 
             // 1. Recursively find the max gain from left and right subtrees.
             // If the gain is negative, we ignore it by using maxOf(..., 0).
-            val leftPath = traverse(node.left)
-            val rightPath = traverse(node.right)
+            val leftPath = maxOf(traverse(node.left), 0)
+            val rightPath = maxOf(traverse(node.right), 0)
 
             // 2. The potential max path through this node (forming a "V" shape)
             // is the sum of the node's value and the gains from both children
